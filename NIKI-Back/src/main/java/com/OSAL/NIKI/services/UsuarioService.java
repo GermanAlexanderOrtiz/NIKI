@@ -19,4 +19,13 @@ public class UsuarioService {
   public List<Usuario> listarUsuarios() {
     return usuarioRepository.findAll();
   }
+
+  public Usuario obtenerUsuario(Long id) {
+    return usuarioRepository.findById(id).orElse(null);
+  }
+
+  public void eliminarUsuario(Long id) {
+    usuarioRepository.deleteById(id);
+  }
+
 }
